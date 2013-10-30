@@ -1,0 +1,2399 @@
+{
+  "default_search": [
+    {
+      "time_measure": "year",
+      "time_limits": [
+        1815,
+        1922
+      ],
+      "counttype": "Percentage_of_Books",
+      "words_collation": "Case_Insensitive",
+      "smoothingSpan": 4,
+      "search_limits": [
+        {
+          "word": [
+            "natural selection"
+          ],
+          "lc0": [
+            "Q"
+          ],
+          "aLanguage": [
+            "eng"
+          ]
+        },
+        {
+          "word": [
+            "natural selection"
+          ],
+          "aLanguage": [
+            "eng"
+          ]
+        },
+        {
+          "word": [
+            "natural selection"
+          ],
+          "lc0": [
+            "H"
+          ],
+          "aLanguage": [
+            "eng"
+          ]
+        }
+      ]
+    },
+    {
+      "time_measure": "year",
+      "time_limits": [
+        1815,
+        1922
+      ],
+      "counttype": "Occurrences_per_Million_Words",
+      "words_collation": "Case_Insensitive",
+      "smoothingSpan": 1,
+      "search_limits": [
+        {
+          "word": [
+            "war"
+          ],
+          "aLanguage": [
+            "eng"
+          ],
+          "country": [
+            "USA"
+          ]
+        },
+        {
+          "word": [
+            "war"
+          ],
+          "aLanguage": [
+            "eng"
+          ],
+          "country": [
+            "UK"
+          ]
+        },
+        {
+          "word": [
+            "guerre"
+          ],
+          "aLanguage": [
+            "fre"
+          ],
+          "country": [
+            "France"
+          ]
+        }
+      ]
+    },
+    {
+      "time_measure": "year",
+      "time_limits": [
+        1815,
+        1922
+      ],
+      "counttype": "Occurrences_per_Million_Words",
+      "words_collation": "Case_Insensitive",
+      "smoothingSpan": 4,
+      "search_limits": [
+        {
+          "word": [
+            "battle"
+          ],
+          "aLanguage": [
+            "eng"
+          ],
+          "country": [
+            "USA"
+          ],
+          "lc1": [
+            "PS"
+          ],
+          "gender": [
+            2
+          ]
+        },
+        {
+          "word": [
+            "battle"
+          ],
+          "aLanguage": [
+            "eng"
+          ],
+          "country": [
+            "USA"
+          ],
+          "lc1": [
+            "PS"
+          ],
+          "gender": [
+            1
+          ]
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "dbname": "presidio",
+    "itemName": "book",
+    "sourceName": "Open Library",
+    "sourceURL": "OpenLibrary.org"
+  },
+  "ui_components": [
+    {
+      "type": "text",
+      "dbfield": "word",
+      "name": "Word(s)"
+    },
+    {
+      "type": "time",
+      "dbfield": "year",
+      "name": "Year of Publication",
+      "unit": "year",
+      "comment": "unit is the value that determines the name displayed",
+      "range": [
+        1700,
+        2010
+      ],
+      "initial": [
+        1815,
+        1922
+      ]
+    },
+    {
+      "type": "time",
+      "dbfield": "authorbirth",
+      "name": "Author Birth Year",
+      "unit": "year",
+      "comment": "unit is the value that determines the name displayed",
+      "range": [
+        1500,
+        1980
+      ],
+      "initial": [
+        1750,
+        1880
+      ]
+    },
+    {
+      "type": "time",
+      "dbfield": "author_age",
+      "name": "Author Age at publication",
+      "unit": "int",
+      "comment": "unit is the value that determines the name displayed",
+      "range": [
+        20,
+        80
+      ],
+      "initial": [
+        30,
+        75
+      ]
+    },
+    {
+      "type": "time",
+      "dbfield": "month",
+      "name": "Month of Publication",
+      "unit": "month",
+      "comment": "unit is the value that determines the name displayed",
+      "range": [
+        628675,
+        734920
+      ],
+      "initial": [
+        628675,
+        734920
+      ]
+    },
+    {
+      "type": "categorical",
+      "dbfield": "lc0",
+      "name": "Subject",
+      "categorical": {
+        "sort_order": [
+          "General Works",
+          "Philosophy. Psychology. Religion",
+          "Auxiliary Sciences Of History",
+          "World History",
+          "History Of The Americas",
+          "History of the Americas",
+          "Geography. Anthropology. Recreation",
+          "Social Sciences",
+          "Political Science",
+          "Law",
+          "Education",
+          "Music And Books On Music",
+          "Fine Arts",
+          "Language And Literature",
+          "Science",
+          "Medicine",
+          "Agriculture",
+          "Technology",
+          "Military Science",
+          "Bibliography. Library Science."
+        ],
+        "descriptions": {
+          "Philosophy. Psychology. Religion": {
+            "dbcode": "B",
+            "name": "B: Philosophy. Psychology. Religion", 
+            "shortname": "Philosophy"           
+          },
+          "Political Science": {
+            "dbcode": "J",
+            "name": "J: Political Science", 
+            "shortname": "Political Science"           
+          },
+          "Medicine": {
+            "dbcode": "R",
+            "name": "R: Medicine", 
+            "shortname": "Medicine"           
+          },
+          "World History": {
+            "dbcode": "D",
+            "name": "D: World History", 
+            "shortname": "World History"           
+          },
+          "Military Science": {
+            "dbcode": "U",
+            "name": "U: Military Science", 
+            "shortname": "Military Science"           
+            },
+          "Social Sciences": {
+            "dbcode": "H",
+            "name": "H:  Social Sciences", 
+            "shortname": "Social Sciences"           
+            },
+          "History Of The Americas": {
+            "dbcode": "E",
+            "name": "E: History Of The Americas", 
+            "shortname": "History Of The Americas"           
+          },
+          "Fine Arts": {
+            "dbcode": "N",
+            "name": "N: Fine Arts", 
+            "shortname": "Fine Arts"           
+           },
+          "General Works": {
+            "dbcode": "A",
+            "name": "A: General Works", 
+            "shortname": "General Works"           
+            },
+          "Auxiliary Sciences Of History": {
+            "dbcode": "C",
+            "name": "C: Auxiliary Sciences Of History", 
+            "shortname": "Auxiliary Sciences Of History"           
+            },
+          "Law": {
+            "dbcode": "K",
+            "name": "K: Law", 
+            "shortname": "Law"           
+            },
+          "Bibliography. Library Science.": {
+            "dbcode": "Z",
+            "name": "Z: Bibliography. Library Science.", 
+            "shortname": "Bibliography"           
+            },
+          "Science": {
+            "dbcode": "Q",
+            "name": "Q: Science", 
+            "shortname": "Science"           
+            },
+          "History of the Americas": {
+            "dbcode": "F",
+            "name": "F: History of the Americas", 
+            "shortname": "History of the Americas"           
+            },
+          "Technology": {
+            "dbcode": "T",
+            "name": "T: Technology", 
+            "shortname": "Technology"           
+            },
+          "Music And Books On Music": {
+            "dbcode": "M",
+            "name": "M: Music And Books On Music", 
+            "shortname": "Music And Books On Music"           
+            },
+          "Language And Literature": {
+            "dbcode": "P",
+            "name": "P: Language And Literature", 
+            "shortname": "Language And Literature"           
+            },
+          "Education": {
+            "dbcode": "L",
+            "name": "L: Education", 
+            "shortname":"Education"           
+            },
+          "Agriculture": {
+            "dbcode": "S",
+            "name": "S: Agriculture", 
+            "shortname": "Agriculture"           
+            },
+          "Geography. Anthropology. Recreation": {
+            "dbcode": "G",
+            "name": "G: Geography. Anthropology. Recreation", 
+            "shortname": "Geography"           
+            }
+        }
+      }
+    },
+    {
+      "type": "categorical",
+      "dbfield": "lc1",
+      "name": "Narrow Subject",
+      "categorical": {
+        "sort_order": [
+          "Collections. Series. Collected works",
+          "Philosophy. Psychology. Religion",
+          "Psychology",
+          "Ethics",
+          "Religions. Mythology. Rationalism",
+          "Christianity",
+          "The Bible",
+          "Doctrinal Theology",
+          "Practical Theology",
+          "Christian Denominations",
+          "Genealogy",
+          "Biography",
+          "World History",
+          "Great Britain",
+          "Austria - Liechtenstein - Hungary - Czechoslovakia",
+          "France - Andorra - Monaco",
+          "Germany",
+          "Italy - Malta",
+          "Russia. Soviet Union. Former Soviet Republics - Poland",
+          "Spain - Portugal",
+          "Balkan Peninsula",
+          "Asia",
+          "Africa",
+          "History Of The Americas",
+          "History of the Americas",
+          "Geography. Anthropology. Recreation",
+          "Anthropology",
+          "Recreation. Leisure",
+          "Economic theory. Demography",
+          "Economic history and conditions",
+          "Industries. Land use. Labor",
+          "Transportation and communications",
+          "Commerce",
+          "Finance",
+          "Public finance",
+          "The family. Marriage. Women",
+          "Social pathology. Social and public welfare. Criminology",
+          "Socialism. Communism. Anarchism",
+          "Political theory",
+          "Political institutions and public administration (United States)",
+          "Political institutions and public administration (Europe)",
+          "International law, see JZ and KZ (obsolete)",
+          "United States",
+          "History of education",
+          "Theory and practice of education",
+          "Special aspects of education",
+          "Individual institutions - United States",
+          "Literature on music",
+          "Instruction and study",
+          "Fine Arts",
+          "Architecture",
+          "Painting",
+          "Decorative arts",
+          "Greek language and literature. Latin language and literature",
+          "Romanic languages",
+          "English language",
+          "Slavic languages and literatures. Baltic languages. Albanian language",
+          "Oriental languages and literatures",
+          "Languages and literatures of Eastern Asia, Africa, Oceania",
+          "Literature (General)",
+          "French literature - Italian literature - Spanish literature - Portuguese literature",
+          "English literature",
+          "American literature",
+          "German and Germanic literature",
+          "Fiction and juvenile belles lettres",
+          "Science",
+          "Mathematics",
+          "Astronomy",
+          "Physics",
+          "Chemistry",
+          "Geology",
+          "Natural history - Biology",
+          "Botany",
+          "Zoology",
+          "Physiology",
+          "Medicine",
+          "Public aspects of medicine",
+          "Internal medicine",
+          "Agriculture",
+          "Plant culture",
+          "Forestry",
+          "Animal culture",
+          "Aquaculture. Fisheries. Angling",
+          "Hunting sports",
+          "Technology",
+          "Engineering (General). Civil engineering",
+          "Environmental technology. Sanitary engineering",
+          "Mechanical engineering and machinery",
+          "Electrical engineering. Electronics. Nuclear engineering",
+          "Mining engineering. Metallurgy",
+          "Chemical technology",
+          "Manufactures",
+          "Handicrafts. Arts and crafts",
+          "Home economics",
+          "Bibliography. Library Science."
+        ],
+        "descriptions": {
+          "Philosophy. Psychology. Religion": {
+            "dbcode": "B",
+            "name": "B: Philosophy. Psychology. Religion", 
+            "shortname": "Philosophy"           
+            },
+          "Religions. Mythology. Rationalism": {
+            "dbcode": "BL",
+            "name": "BL: Religions. Mythology. Rationalism", 
+            "shortname": "Religions"           
+            },
+          "World History": {
+            "dbcode": "D",
+            "name": "D: World History", 
+            "shortname": "World History"           
+            },
+          "Social pathology. Social and public welfare. Criminology": {
+            "dbcode": "HV",
+            "name": "HV: Social pathology. Social and public welfare. Criminology", 
+            "shortname": "Social pathology"           
+            },
+          "Handicrafts. Arts and crafts": {
+            "dbcode": "TT",
+            "name": "TT: Handicrafts. Arts and crafts", 
+            "shortname": "Handicrafts"           
+            },
+          "Collections. Series. Collected works": {
+            "dbcode": "AC",
+            "name": "AC: Collections. Series. Collected works", 
+            "shortname": "Collections"           
+            },
+          "Anthropology": {
+            "dbcode": "GN",
+            "name": "GN: Anthropology", 
+            "shortname": "Anthropology"           
+            },
+          "Germany": {
+            "dbcode": "DD",
+            "name": "DD: Germany", 
+            "shortname": "Germany"           
+            },
+          "Ethics": {
+            "dbcode": "BJ",
+            "name": "BJ: Ethics", 
+            "shortname": "Ethics"           
+            },
+          "Environmental technology. Sanitary engineering": {
+            "dbcode": "TD",
+            "name": "TD: Environmental technology. Sanitary engineering", 
+            "shortname": "Environmental technology"           
+            },
+          "Balkan Peninsula": {
+            "dbcode": "DR",
+            "name": "DR: Balkan Peninsula", 
+            "shortname": "Balkan Peninsula"           
+            },
+          "Mechanical engineering and machinery": {
+            "dbcode": "TJ",
+            "name": "TJ: Mechanical engineering and machinery", 
+            "shortname": "Mechanical engineering"           
+            },
+          "Engineering (General). Civil engineering": {
+            "dbcode": "TA",
+            "name": "TA: Engineering (General). Civil engineering", 
+            "shortname": "Engineering"           
+            },
+          "Agriculture": {
+            "dbcode": "S",
+            "name": "S: Agriculture", 
+            "shortname": "Agriculture"           
+            },
+          "Russia. Soviet Union. Former Soviet Republics - Poland": {
+            "dbcode": "DK",
+            "name": "DK: Russia. Soviet Union. Former Soviet Republics - Poland", 
+            "shortname": "Russia"           
+            },
+          "Literature on music": {
+            "dbcode": "ML",
+            "name": "ML: Literature on music", 
+            "shortname": "Literature on music"           
+            },
+          "Bibliography. Library Science.": {
+            "dbcode": "Z",
+            "name": "Z: Bibliography. Library Science.", 
+            "shortname": "Bibliography"           
+            },
+          "American literature": {
+            "dbcode": "PS",
+            "name": "PS: American literature", 
+            "shortname": "American literature"           
+            },
+          "Decorative arts": {
+            "dbcode": "NK",
+            "name": "NK: Decorative arts", 
+            "shortname": "Decorative arts"           
+            },
+          "Christianity": {
+            "dbcode": "BR",
+            "name": "BR: Christianity", 
+            "shortname": "Christianity"           
+            },
+          "Medicine": {
+            "dbcode": "R",
+            "name": "R: Medicine", 
+            "shortname": "Medicine"           
+            },
+          "International law, see JZ and KZ (obsolete)": {
+            "dbcode": "JX",
+            "name": "JX: International law, see JZ and KZ (obsolete)", 
+            "shortname": "International law"           
+            },
+          "Astronomy": {
+            "dbcode": "QB",
+            "name": "QB: Astronomy", 
+            "shortname": "Astronomy"           
+            },
+          "Individual institutions - United States": {
+            "dbcode": "LD",
+            "name": "LD: Individual institutions - United States", 
+            "shortname": "Individual institutions US"           
+            },
+          "Commerce": {
+            "dbcode": "HF",
+            "name": "HF: Commerce", 
+            "shortname": "Commerce"           
+            },
+          "Hunting sports": {
+            "dbcode": "SK",
+            "name": "SK: Hunting sports", 
+            "shortname": "Hunting sports"           
+            },
+          "Socialism. Communism. Anarchism": {
+            "dbcode": "HX",
+            "name": "HX: Socialism. Communism. Anarchism", 
+            "shortname": "Socialism"           
+            },
+          "Recreation. Leisure": {
+            "dbcode": "GV",
+            "name": "GV: Recreation. Leisure", 
+            "shortname": "Recreation"           
+            },
+          "United States": {
+            "dbcode": "KF",
+            "name": "KF: United States", 
+            "shortname": "United States"           
+            },
+          "Special aspects of education": {
+            "dbcode": "LC",
+            "name": "LC: Special aspects of education", 
+            "shortname": "Special aspects of education"           
+            },
+          "Architecture": {
+            "dbcode": "NA",
+            "name": "NA: Architecture", 
+            "shortname": "Architecture"           
+            },
+          "Austria - Liechtenstein - Hungary - Czechoslovakia": {
+            "dbcode": "DB",
+            "name": "DB: Austria - Liechtenstein - Hungary - Czechoslovakia", 
+            "shortname": "Austria"           
+            },
+          "Chemistry": {
+            "dbcode": "QD",
+            "name": "QD: Chemistry", 
+            "shortname": "Chemistry"           
+            },
+          "French literature - Italian literature - Spanish literature - Portuguese literature": {
+            "dbcode": "PQ",
+            "name": "PQ: French literature - Italian literature - Spanish literature - Portuguese literature", 
+            "shortname": "French literature"           
+            },
+          "Fine Arts": {
+            "dbcode": "N",
+            "name": "N: Fine Arts", 
+            "shortname": "Fine Arts"           
+            },
+          "Christian Denominations": {
+            "dbcode": "BX",
+            "name": "BX: Christian Denominations", 
+            "shortname": "Christian Denominations"           
+            },
+          "Zoology": {
+            "dbcode": "QL",
+            "name": "QL: Zoology", 
+            "shortname": "Zoology"           
+            },
+          "Italy - Malta": {
+            "dbcode": "DG",
+            "name": "DG: Italy - Malta",        
+            "shortname": "Italy - Malta"           
+            },
+          "Technology": {
+            "dbcode": "T",
+            "name": "T: Technology", 
+            "shortname": "Technology"           
+            },
+          "Home economics": {
+            "dbcode": "TX",
+            "name": "TX: Home economics", 
+            "shortname": "Home economics"           
+            },
+          "Psychology": {
+            "dbcode": "BF",
+            "name": "BF: Psychology", 
+            "shortname": "Psychology"           
+            },
+          "Slavic languages and literatures. Baltic languages. Albanian language": {
+            "dbcode": "PG",
+            "name": "PG: Slavic languages and literatures. Baltic languages. Albanian language", 
+            "shortname": "PG: Slavic languages"           
+            },
+          "Asia": {
+            "dbcode": "DS",
+            "name": "DS: Asia", 
+            "shortname": "Asia"           
+            },
+          "Forestry": {
+            "dbcode": "SD",
+            "name": "SD: Forestry", 
+            "shortname": "Forestry"           
+            },
+          "Great Britain": {
+            "dbcode": "DA",
+            "name": "DA: Great Britain", 
+            "shortname": "Great Britain"           
+            },
+          "Political institutions and public administration (United States)": {
+            "dbcode": "JK",
+            "name": "JK: Political institutions and public administration (United States)", 
+            "shortname": "Political institutions (US)"           
+            },
+          "Political institutions and public administration (Europe)": {
+            "dbcode": "JN",
+            "name": "JN: Political institutions and public administration (Europe)", 
+            "shortname": "Political institutions (Europe)"           
+            },
+          "Greek language and literature. Latin language and literature": {
+            "dbcode": "PA",
+            "name": "PA: Greek language and literature. Latin language and literature", 
+            "shortname": "Greek language and literature"           
+            },
+          "Political theory": {
+            "dbcode": "JC",
+            "name": "JC: Political theory", 
+            "shortname": "Political theory"           
+            },
+          "Finance": {
+            "dbcode": "HG",
+            "name": "HG: Finance", 
+            "shortname": "Finance"           
+            },
+          "Geology": {
+            "dbcode": "QE",
+            "name": "QE: Geology", 
+            "shortname": "Geology"           
+            },
+          "English literature": {
+            "dbcode": "PR",
+            "name": "PR: English literature", 
+            "shortname": "English literature"           
+            },
+          "Plant culture": {
+            "dbcode": "SB",
+            "name": "SB: Plant culture", 
+            "shortname": "Plant culture"           
+            },
+          "Economic history and conditions": {
+            "dbcode": "HC",
+            "name": "HC: Economic history and conditions", 
+            "shortname": "Economic history"           
+            },
+          "Physiology": {
+            "dbcode": "QP",
+            "name": "QP: Physiology", 
+            "shortname": "Physiology"           
+            },
+          "Manufactures": {
+            "dbcode": "TS",
+            "name": "TS: Manufactures", 
+            "shortname": "Manufactures"           
+            },
+          "Economic theory. Demography": {
+            "dbcode": "HB",
+            "name": "HB: Economic theory. Demography", 
+            "shortname": "Economic theory"           
+            },
+          "Mining engineering. Metallurgy": {
+            "dbcode": "TN",
+            "name": "TN: Mining engineering. Metallurgy", 
+            "shortname": "Mining engineering"           
+            },
+          "Genealogy": {
+            "dbcode": "CS",
+            "name": "CS: Genealogy", 
+            "shortname": "Genealogy"           
+            },
+          "Animal culture": {
+            "dbcode": "SF",
+            "name": "SF: Animal culture", 
+            "shortname": "Animal culture"           
+            },
+          "Science": {
+            "dbcode": "Q",
+            "name": "Q: Science", 
+            "shortname": "Science"           
+            },
+          "Chemical technology": {
+            "dbcode": "TP",
+            "name": "TP: Chemical technology", 
+            "shortname": "Chemical technology"           
+            },
+          "English language": {
+            "dbcode": "PE",
+            "name": "PE: English language", 
+            "shortname": "English language"           
+            },
+          "Industries. Land use. Labor": {
+            "dbcode": "HD",
+            "name": "HD: Industries. Land use. Labor", 
+            "shortname": "Industries"           
+            },
+          "Painting": {
+            "dbcode": "ND",
+            "name": "ND: Painting", 
+            "shortname": "Painting"           
+            },
+          "Languages and literatures of Eastern Asia, Africa, Oceania": {
+            "dbcode": "PL",
+            "name": "PL: Languages and literatures of Eastern Asia, Africa, Oceania", 
+            "shortname": "Languages of Eastern Asia"           
+            },
+          "Botany": {
+            "dbcode": "QK",
+            "name": "QK: Botany", 
+            "shortname": "Botany"           
+            },
+          "History of the Americas": {
+            "dbcode": "F",
+            "name": "F: History of the Americas", 
+            "shortname": "History of the Americas"           
+            },
+          "Instruction and study": {
+            "dbcode": "MT",
+            "name": "MT: Instruction and study", 
+            "shortname": "Instruction and study"           
+            },
+          "Africa": {
+            "dbcode": "DT",
+            "name": "DT: Africa", 
+            "shortname": "Africa"           
+            },
+          "Biography": {
+            "dbcode": "CT",
+            "name": "CT: Biography", 
+            "shortname": "Biography"           
+            },
+          "Internal medicine": {
+            "dbcode": "RC",
+            "name": "RC: Internal medicine", 
+            "shortname": "Internal medicine"           
+            },
+          "Practical Theology": {
+            "dbcode": "BV",
+            "name": "BV: Practical Theology", 
+            "shortname": "Practical Theology"           
+            },
+          "Spain - Portugal": {
+            "dbcode": "DP",
+            "name": "DP: Spain - Portugal", 
+            "shortname": "Spain - Portugal"           
+            },
+          "The Bible": {
+            "dbcode": "BS",
+            "name": "BS: The Bible",             
+            "shortname": "Bible"
+          },   
+          "Transportation and communications": {
+            "dbcode": "HE",
+            "name": "HE: Transportation and communications",
+            "shortname": "Transportation"       
+            },
+          "Mathematics": {
+            "dbcode": "QA",
+            "name": "QA: Mathematics",             
+            "shortname": "Mathematics"           
+            },
+          "Public aspects of medicine": {
+            "dbcode": "RA",
+            "name": "RA: Public aspects of medicine", 
+            "shortname": "Public aspects of medicine"
+            },
+          "History of education": {
+            "dbcode": "LA",
+            "name": "LA: History of education",
+            "shortname": "History of education"            
+           },
+          "Fiction and juvenile belles lettres": {
+            "dbcode": "PZ",
+            "name": "PZ: Fiction and juvenile belles lettres", 
+            "shortname": "Fiction and juvenile belles lettres"
+            },
+          "Public finance": {
+            "dbcode": "HJ",
+            "name": "HJ: Public finance", 
+            "shortname": "HJ: Public finance"
+            },
+          "Literature (General)": {
+            "dbcode": "PN",
+            "name": "PN: Literature (General)",
+            "shortname": "Literature"  
+            },
+          "The family. Marriage. Women": {
+            "dbcode": "HQ",
+            "name": "HQ: The family. Marriage. Women",
+            "shortname": "Family"
+            },
+          "Natural history - Biology": {
+            "dbcode": "QH",
+            "name": "QH: Natural history - Biology",
+            "shortname": "Biology"
+            },
+          "France - Andorra - Monaco": {
+            "dbcode": "DC",
+            "name": "DC: France - Andorra - Monaco",
+            "shortname": "France"
+            },          
+          "Romanic languages": {
+            "dbcode": "PC",
+            "name": "PC: Romanic languages",        
+            "shortname": "Romanic languages"
+            },
+          "Electrical engineering. Electronics. Nuclear engineering": {
+            "dbcode": "TK",
+            "name": "TK: Electrical engineering. Electronics. Nuclear engineering",
+             "shortname": "Electrical engineering"
+             },           
+          "Physics": {
+            "dbcode": "QC",
+            "name": "QC: Physics",
+            "shortname": "Physics"           
+            },
+          "German and Germanic literature": {
+            "dbcode": "PT",
+            "name": "PT: German and Germanic literature",
+            "shortname": "German"
+          },
+          "Theory and practice of education": {
+            "dbcode": "LB",
+            "name": "LB: Theory and practice of education",
+            "shortname": "Theory and practice of education"
+            },
+          "History Of The Americas": {
+            "dbcode": "E",
+            "name": "E: History Of The Americas", 
+            "shortname": "History Of The Americas"
+            },
+          "Aquaculture. Fisheries. Angling": {
+            "dbcode": "SH",
+            "name": "SH: Aquaculture. Fisheries. Angling",
+            "shortname": "Aquaculture"
+        },
+          "Geography. Anthropology. Recreation": {
+            "dbcode": "G",
+            "name": "G: Geography. Anthropology. Recreation",
+            "shortname": "Geography" 
+            },
+          "Doctrinal Theology": {
+            "dbcode": "BT",
+            "name": "BT: Doctrinal Theology",
+            "shortname": "Doctrinal Theology" 
+            },           
+          "Oriental languages and literatures": {
+            "dbcode": "PJ",
+            "name": "PJ: Oriental languages and literatures",
+            "shortname":"Oriental languages"             
+           }
+        }
+      }
+    },
+    {
+      "type": "categorical",
+      "dbfield": "LCSH",
+      "name": "Subject Heading",
+      "categorical": {
+        "sort_order": [
+          "History",
+          "United States",
+          "Description and travel",
+          "Great Britain",
+          "Politics and government",
+          "Biography",
+          "France",
+          "Canada",
+          "History and criticism",
+          "Bibliography",
+          "World War, 1914-1918",
+          "England",
+          "Fiction",
+          "Early works to 1800",
+          "Social life and customs",
+          "Catholic Church",
+          "Sources",
+          "Education",
+          "19th Century",
+          "Civil War, 1861-1865",
+          "Germany",
+          "Massachusetts",
+          "Italy",
+          "Poetry",
+          "Missions",
+          "California",
+          "Church history",
+          "Dictionaries",
+          "Sermons",
+          "Europe",
+          "English language",
+          "India",
+          "New York (State)",
+          "Periodicals",
+          "Catalogs",
+          "Antiquities",
+          "Foreign relations",
+          "Montana",
+          "Economic conditions",
+          "Grammar",
+          "Church of England",
+          "Indians of North America",
+          "Histoire",
+          "Law and Legislation",
+          "Agriculture",
+          "Ireland",
+          "Scotland",
+          "Qu",
+          "Bible",
+          "Study and teaching",
+          "Boston",
+          "Ontario",
+          "Slavery",
+          "Juvenile literature",
+          "Philosophy",
+          "Illinois",
+          "Commentaries",
+          "Jesus Christ",
+          "Women",
+          "Railroads",
+          "Lincoln, Abraham, 1809-1865",
+          "Quebec (Province)",
+          "Birds",
+          "Art",
+          "China",
+          "English poetry",
+          "Drama",
+          "Criticism, interpretation, etc",
+          "Botany",
+          "Law",
+          "Religion",
+          "Revolution, 1775-1783",
+          "English literature",
+          "Spain",
+          "Commerce",
+          "Descriptions et voyages",
+          "Natural history",
+          "Finance",
+          "Shakespeare, William, 1564-161",
+          "Geology",
+          "Personal narratives",
+          "Conduct of life",
+          "Regimental histories",
+          "Social conditions",
+          "Diseases",
+          "Rome",
+          "America",
+          "Colonies",
+          "Sermons, English",
+          "18th century",
+          "Genealogy",
+          "Pennsylvania",
+          "Plants",
+          "Colonial period, ca. 1600-1775",
+          "Guidebooks",
+          "Economics",
+          "Jews",
+          "Mexico",
+          "Christianity",
+          "Controversial literature",
+          "French language",
+          "Discovery and exploration",
+          "Civilization",
+          "Folklore",
+          "Science",
+          "Music",
+          "Theology",
+          "Horses",
+          "Greece",
+          "Taxation",
+          "Japan",
+          "Architecture",
+          "Russia",
+          "Latin language",
+          "Handbooks, manuals, etc",
+          "Christian life",
+          "Egypt",
+          "Readers",
+          "Theater",
+          "Doctrines",
+          "Texts",
+          "Soviet Union",
+          "African Americans",
+          "Congresses",
+          "West (U.S.)",
+          "20th century",
+          "Ethics",
+          "Zoology",
+          "Clergy",
+          "Socialism",
+          "Criticism and interpretation",
+          "Campaigns",
+          "History. [from old catalog]",
+          "Statistics",
+          "Collections",
+          "North America",
+          "Directories",
+          "Sermons, American",
+          "Pictorial works",
+          "Politique et gouvernement",
+          "Medicine",
+          "Hunting",
+          "Translations into English",
+          "Political science",
+          "German language",
+          "Economic aspects",
+          "British Columbia",
+          "North Carolina",
+          "1861-1865",
+          "Austria",
+          "Virginia",
+          "French literature",
+          "Tariff",
+          "Revolution, 1789-1799",
+          "Maryland",
+          "Voyages and travels",
+          "Forests and forestry",
+          "Societies, etc",
+          "Literature",
+          "Am",
+          "Registers of births, etc.",
+          "Psychology",
+          "Paleontology",
+          "Children",
+          "Constitutional history",
+          "Physiology",
+          "Presbyterian Church",
+          "New England",
+          "London (England)",
+          "Banks and banking",
+          "Boston (Mass.)",
+          "Napoleon I, Emperor of the Fre",
+          "Universities and colleges",
+          "Exhibitions",
+          "Anecdotes",
+          "Cookery, American",
+          "Painting",
+          "New York (N.Y.)",
+          "Australia",
+          "Correspondence",
+          "R",
+          "Africa",
+          "Jesuits",
+          "Chemistry",
+          "Outlines, syllabi, etc",
+          "Teaching",
+          "Netherlands",
+          "Geography",
+          "City planning",
+          "Development Projects",
+          "Classification",
+          "Colombie-Britannique",
+          "Greek language",
+          "London",
+          "Mollusks",
+          "Fishing",
+          "Dialects",
+          "Church and state",
+          "Housing",
+          "American literature",
+          "Industries",
+          "Description",
+          "Mathematics",
+          "Ethnology",
+          "Theology, Doctrinal",
+          "Frontier and pioneer life",
+          "Insects",
+          "Southern States",
+          "D",
+          "Manuscripts",
+          "Evolution",
+          "Accounting",
+          "Fishes",
+          "South Africa",
+          "Arithmetic",
+          "17th century"
+        ],
+        "descriptions": {
+          "Canada": {
+            "dbcode": "Canada",
+            "name": "Canada"
+          },
+          "Hunting": {
+            "dbcode": "Hunting",
+            "name": "Hunting"
+          },
+          "Criticism, interpretation, etc": {
+            "dbcode": "Criticism, interpretation, etc",
+            "name": "Criticism, interpretation, etc"
+          },
+          "Housing": {
+            "dbcode": "Housing",
+            "name": "Housing"
+          },
+          "New York (N.Y.)": {
+            "dbcode": "New York (N.Y.)",
+            "name": "New York (N.Y.)"
+          },
+          "Presbyterian Church": {
+            "dbcode": "Presbyterian Church",
+            "name": "Presbyterian Church"
+          },
+          "Poetry": {
+            "dbcode": "Poetry",
+            "name": "Poetry"
+          },
+          "Illinois": {
+            "dbcode": "Illinois",
+            "name": "Illinois"
+          },
+          "Religion": {
+            "dbcode": "Religion",
+            "name": "Religion"
+          },
+          "Latin language": {
+            "dbcode": "Latin language",
+            "name": "Latin language"
+          },
+          "Civilization": {
+            "dbcode": "Civilization",
+            "name": "Civilization"
+          },
+          "Collections": {
+            "dbcode": "Collections",
+            "name": "Collections"
+          },
+          "Church history": {
+            "dbcode": "Church history",
+            "name": "Church history"
+          },
+          "Civil War, 1861-1865": {
+            "dbcode": "Civil War, 1861-1865",
+            "name": "Civil War, 1861-1865"
+          },
+          "German language": {
+            "dbcode": "German language",
+            "name": "German language"
+          },
+          "Arithmetic": {
+            "dbcode": "Arithmetic",
+            "name": "Arithmetic"
+          },
+          "Description and travel": {
+            "dbcode": "Description and travel",
+            "name": "Description and travel"
+          },
+          "Philosophy": {
+            "dbcode": "Philosophy",
+            "name": "Philosophy"
+          },
+          "Study and teaching": {
+            "dbcode": "Study and teaching",
+            "name": "Study and teaching"
+          },
+          "Cookery, American": {
+            "dbcode": "Cookery, American",
+            "name": "Cookery, American"
+          },
+          "Descriptions et voyages": {
+            "dbcode": "Descriptions et voyages",
+            "name": "Descriptions et voyages"
+          },
+          "Fishes": {
+            "dbcode": "Fishes",
+            "name": "Fishes"
+          },
+          "Ethics": {
+            "dbcode": "Ethics",
+            "name": "Ethics"
+          },
+          "African Americans": {
+            "dbcode": "African Americans",
+            "name": "African Americans"
+          },
+          "Spain": {
+            "dbcode": "Spain",
+            "name": "Spain"
+          },
+          "Pictorial works": {
+            "dbcode": "Pictorial works",
+            "name": "Pictorial works"
+          },
+          "Evolution": {
+            "dbcode": "Evolution",
+            "name": "Evolution"
+          },
+          "British Columbia": {
+            "dbcode": "British Columbia",
+            "name": "British Columbia"
+          },
+          "Grammar": {
+            "dbcode": "Grammar",
+            "name": "Grammar"
+          },
+          "Missions": {
+            "dbcode": "Missions",
+            "name": "Missions"
+          },
+          "Mathematics": {
+            "dbcode": "Mathematics",
+            "name": "Mathematics"
+          },
+          "Revolution, 1775-1783": {
+            "dbcode": "Revolution, 1775-1783",
+            "name": "Revolution, 1775-1783"
+          },
+          "Directories": {
+            "dbcode": "Directories",
+            "name": "Directories"
+          },
+          "Rome": {
+            "dbcode": "Rome",
+            "name": "Rome"
+          },
+          "Napoleon I, Emperor of the Fre": {
+            "dbcode": "Napoleon I, Emperor of the Fre",
+            "name": "Napoleon I, Emperor of the Fre"
+          },
+          "England": {
+            "dbcode": "England",
+            "name": "England"
+          },
+          "Colonial period, ca. 1600-1775": {
+            "dbcode": "Colonial period, ca. 1600-1775",
+            "name": "Colonial period, ca. 1600-1775"
+          },
+          "Societies, etc": {
+            "dbcode": "Societies, etc",
+            "name": "Societies, etc"
+          },
+          "Art": {
+            "dbcode": "Art",
+            "name": "Art"
+          },
+          "Australia": {
+            "dbcode": "Australia",
+            "name": "Australia"
+          },
+          "Translations into English": {
+            "dbcode": "Translations into English",
+            "name": "Translations into English"
+          },
+          "India": {
+            "dbcode": "India",
+            "name": "India"
+          },
+          "French literature": {
+            "dbcode": "French literature",
+            "name": "French literature"
+          },
+          "Congresses": {
+            "dbcode": "Congresses",
+            "name": "Congresses"
+          },
+          "Foreign relations": {
+            "dbcode": "Foreign relations",
+            "name": "Foreign relations"
+          },
+          "18th century": {
+            "dbcode": "18th century",
+            "name": "18th century"
+          },
+          "Social conditions": {
+            "dbcode": "Social conditions",
+            "name": "Social conditions"
+          },
+          "Music": {
+            "dbcode": "Music",
+            "name": "Music"
+          },
+          "Commentaries": {
+            "dbcode": "Commentaries",
+            "name": "Commentaries"
+          },
+          "Agriculture": {
+            "dbcode": "Agriculture",
+            "name": "Agriculture"
+          },
+          "Statistics": {
+            "dbcode": "Statistics",
+            "name": "Statistics"
+          },
+          "Bibliography": {
+            "dbcode": "Bibliography",
+            "name": "Bibliography"
+          },
+          "London (England)": {
+            "dbcode": "London (England)",
+            "name": "London (England)"
+          },
+          "World War, 1914-1918": {
+            "dbcode": "World War, 1914-1918",
+            "name": "World War, 1914-1918"
+          },
+          "Church and state": {
+            "dbcode": "Church and state",
+            "name": "Church and state"
+          },
+          "Revolution, 1789-1799": {
+            "dbcode": "Revolution, 1789-1799",
+            "name": "Revolution, 1789-1799"
+          },
+          "France": {
+            "dbcode": "France",
+            "name": "France"
+          },
+          "1861-1865": {
+            "dbcode": "1861-1865",
+            "name": "1861-1865"
+          },
+          "Jesuits": {
+            "dbcode": "Jesuits",
+            "name": "Jesuits"
+          },
+          "Theater": {
+            "dbcode": "Theater",
+            "name": "Theater"
+          },
+          "Maryland": {
+            "dbcode": "Maryland",
+            "name": "Maryland"
+          },
+          "North America": {
+            "dbcode": "North America",
+            "name": "North America"
+          },
+          "Politics and government": {
+            "dbcode": "Politics and government",
+            "name": "Politics and government"
+          },
+          "Paleontology": {
+            "dbcode": "Paleontology",
+            "name": "Paleontology"
+          },
+          "Juvenile literature": {
+            "dbcode": "Juvenile literature",
+            "name": "Juvenile literature"
+          },
+          "Campaigns": {
+            "dbcode": "Campaigns",
+            "name": "Campaigns"
+          },
+          "Industries": {
+            "dbcode": "Industries",
+            "name": "Industries"
+          },
+          "Montana": {
+            "dbcode": "Montana",
+            "name": "Montana"
+          },
+          "China": {
+            "dbcode": "China",
+            "name": "China"
+          },
+          "Massachusetts": {
+            "dbcode": "Massachusetts",
+            "name": "Massachusetts"
+          },
+          "Folklore": {
+            "dbcode": "Folklore",
+            "name": "Folklore"
+          },
+          "London": {
+            "dbcode": "London",
+            "name": "London"
+          },
+          "Personal narratives": {
+            "dbcode": "Personal narratives",
+            "name": "Personal narratives"
+          },
+          "America": {
+            "dbcode": "America",
+            "name": "America"
+          },
+          "Tariff": {
+            "dbcode": "Tariff",
+            "name": "Tariff"
+          },
+          "Handbooks, manuals, etc": {
+            "dbcode": "Handbooks, manuals, etc",
+            "name": "Handbooks, manuals, etc"
+          },
+          "19th Century": {
+            "dbcode": "19th Century",
+            "name": "19th Century"
+          },
+          "Discovery and exploration": {
+            "dbcode": "Discovery and exploration",
+            "name": "Discovery and exploration"
+          },
+          "Plants": {
+            "dbcode": "Plants",
+            "name": "Plants"
+          },
+          "Commerce": {
+            "dbcode": "Commerce",
+            "name": "Commerce"
+          },
+          "Virginia": {
+            "dbcode": "Virginia",
+            "name": "Virginia"
+          },
+          "Bible": {
+            "dbcode": "Bible",
+            "name": "Bible"
+          },
+          "Guidebooks": {
+            "dbcode": "Guidebooks",
+            "name": "Guidebooks"
+          },
+          "Lincoln, Abraham, 1809-1865": {
+            "dbcode": "Lincoln, Abraham, 1809-1865",
+            "name": "Lincoln, Abraham, 1809-1865"
+          },
+          "Law and Legislation": {
+            "dbcode": "Law and Legislation",
+            "name": "Law and Legislation"
+          },
+          "Dictionaries": {
+            "dbcode": "Dictionaries",
+            "name": "Dictionaries"
+          },
+          "Outlines, syllabi, etc": {
+            "dbcode": "Outlines, syllabi, etc",
+            "name": "Outlines, syllabi, etc"
+          },
+          "Drama": {
+            "dbcode": "Drama",
+            "name": "Drama"
+          },
+          "Boston (Mass.)": {
+            "dbcode": "Boston (Mass.)",
+            "name": "Boston (Mass.)"
+          },
+          "Education": {
+            "dbcode": "Education",
+            "name": "Education"
+          },
+          "Christian life": {
+            "dbcode": "Christian life",
+            "name": "Christian life"
+          },
+          "Architecture": {
+            "dbcode": "Architecture",
+            "name": "Architecture"
+          },
+          "Clergy": {
+            "dbcode": "Clergy",
+            "name": "Clergy"
+          },
+          "Natural history": {
+            "dbcode": "Natural history",
+            "name": "Natural history"
+          },
+          "Chemistry": {
+            "dbcode": "Chemistry",
+            "name": "Chemistry"
+          },
+          "Russia": {
+            "dbcode": "Russia",
+            "name": "Russia"
+          },
+          "Registers of births, etc.": {
+            "dbcode": "Registers of births, etc.",
+            "name": "Registers of births, etc."
+          },
+          "United States": {
+            "dbcode": "United States",
+            "name": "United States"
+          },
+          "New York (State)": {
+            "dbcode": "New York (State)",
+            "name": "New York (State)"
+          },
+          "Jews": {
+            "dbcode": "Jews",
+            "name": "Jews"
+          },
+          "Indians of North America": {
+            "dbcode": "Indians of North America",
+            "name": "Indians of North America"
+          },
+          "Forests and forestry": {
+            "dbcode": "Forests and forestry",
+            "name": "Forests and forestry"
+          },
+          "Insects": {
+            "dbcode": "Insects",
+            "name": "Insects"
+          },
+          "Boston": {
+            "dbcode": "Boston",
+            "name": "Boston"
+          },
+          "Histoire": {
+            "dbcode": "Histoire",
+            "name": "Histoire"
+          },
+          "Railroads": {
+            "dbcode": "Railroads",
+            "name": "Railroads"
+          },
+          "North Carolina": {
+            "dbcode": "North Carolina",
+            "name": "North Carolina"
+          },
+          "Austria": {
+            "dbcode": "Austria",
+            "name": "Austria"
+          },
+          "Zoology": {
+            "dbcode": "Zoology",
+            "name": "Zoology"
+          },
+          "Japan": {
+            "dbcode": "Japan",
+            "name": "Japan"
+          },
+          "Birds": {
+            "dbcode": "Birds",
+            "name": "Birds"
+          },
+          "Theology, Doctrinal": {
+            "dbcode": "Theology, Doctrinal",
+            "name": "Theology, Doctrinal"
+          },
+          "Quebec (Province)": {
+            "dbcode": "Quebec (Province)",
+            "name": "Quebec (Province)"
+          },
+          "Ontario": {
+            "dbcode": "Ontario",
+            "name": "Ontario"
+          },
+          "Psychology": {
+            "dbcode": "Psychology",
+            "name": "Psychology"
+          },
+          "Readers": {
+            "dbcode": "Readers",
+            "name": "Readers"
+          },
+          "Dialects": {
+            "dbcode": "Dialects",
+            "name": "Dialects"
+          },
+          "Periodicals": {
+            "dbcode": "Periodicals",
+            "name": "Periodicals"
+          },
+          "Anecdotes": {
+            "dbcode": "Anecdotes",
+            "name": "Anecdotes"
+          },
+          "Fiction": {
+            "dbcode": "Fiction",
+            "name": "Fiction"
+          },
+          "Great Britain": {
+            "dbcode": "Great Britain",
+            "name": "Great Britain"
+          },
+          "Economic conditions": {
+            "dbcode": "Economic conditions",
+            "name": "Economic conditions"
+          },
+          "Ireland": {
+            "dbcode": "Ireland",
+            "name": "Ireland"
+          },
+          "Medicine": {
+            "dbcode": "Medicine",
+            "name": "Medicine"
+          },
+          "Conduct of life": {
+            "dbcode": "Conduct of life",
+            "name": "Conduct of life"
+          },
+          "Colonies": {
+            "dbcode": "Colonies",
+            "name": "Colonies"
+          },
+          "Sermons": {
+            "dbcode": "Sermons",
+            "name": "Sermons"
+          },
+          "Shakespeare, William, 1564-161": {
+            "dbcode": "Shakespeare, William, 1564-161",
+            "name": "Shakespeare, William, 1564-161"
+          },
+          "Europe": {
+            "dbcode": "Europe",
+            "name": "Europe"
+          },
+          "Literature": {
+            "dbcode": "Literature",
+            "name": "Literature"
+          },
+          "Catalogs": {
+            "dbcode": "Catalogs",
+            "name": "Catalogs"
+          },
+          "Finance": {
+            "dbcode": "Finance",
+            "name": "Finance"
+          },
+          "Geology": {
+            "dbcode": "Geology",
+            "name": "Geology"
+          },
+          "New England": {
+            "dbcode": "New England",
+            "name": "New England"
+          },
+          "English literature": {
+            "dbcode": "English literature",
+            "name": "English literature"
+          },
+          "17th century": {
+            "dbcode": "17th century",
+            "name": "17th century"
+          },
+          "California": {
+            "dbcode": "California",
+            "name": "California"
+          },
+          "Political science": {
+            "dbcode": "Political science",
+            "name": "Political science"
+          },
+          "Physiology": {
+            "dbcode": "Physiology",
+            "name": "Physiology"
+          },
+          "Women": {
+            "dbcode": "Women",
+            "name": "Women"
+          },
+          "Controversial literature": {
+            "dbcode": "Controversial literature",
+            "name": "Controversial literature"
+          },
+          "Frontier and pioneer life": {
+            "dbcode": "Frontier and pioneer life",
+            "name": "Frontier and pioneer life"
+          },
+          "Genealogy": {
+            "dbcode": "Genealogy",
+            "name": "Genealogy"
+          },
+          "Social life and customs": {
+            "dbcode": "Social life and customs",
+            "name": "Social life and customs"
+          },
+          "Pennsylvania": {
+            "dbcode": "Pennsylvania",
+            "name": "Pennsylvania"
+          },
+          "Science": {
+            "dbcode": "Science",
+            "name": "Science"
+          },
+          "Development Projects": {
+            "dbcode": "Development Projects",
+            "name": "Development Projects"
+          },
+          "Slavery": {
+            "dbcode": "Slavery",
+            "name": "Slavery"
+          },
+          "English language": {
+            "dbcode": "English language",
+            "name": "English language"
+          },
+          "Theology": {
+            "dbcode": "Theology",
+            "name": "Theology"
+          },
+          "R": {
+            "dbcode": "R",
+            "name": "R"
+          },
+          "Southern States": {
+            "dbcode": "Southern States",
+            "name": "Southern States"
+          },
+          "Christianity": {
+            "dbcode": "Christianity",
+            "name": "Christianity"
+          },
+          "Painting": {
+            "dbcode": "Painting",
+            "name": "Painting"
+          },
+          "History": {
+            "dbcode": "History",
+            "name": "History"
+          },
+          "Botany": {
+            "dbcode": "Botany",
+            "name": "Botany"
+          },
+          "Greek language": {
+            "dbcode": "Greek language",
+            "name": "Greek language"
+          },
+          "Classification": {
+            "dbcode": "Classification",
+            "name": "Classification"
+          },
+          "Manuscripts": {
+            "dbcode": "Manuscripts",
+            "name": "Manuscripts"
+          },
+          "20th century": {
+            "dbcode": "20th century",
+            "name": "20th century"
+          },
+          "South Africa": {
+            "dbcode": "South Africa",
+            "name": "South Africa"
+          },
+          "Africa": {
+            "dbcode": "Africa",
+            "name": "Africa"
+          },
+          "Mollusks": {
+            "dbcode": "Mollusks",
+            "name": "Mollusks"
+          },
+          "Early works to 1800": {
+            "dbcode": "Early works to 1800",
+            "name": "Early works to 1800"
+          },
+          "Colombie-Britannique": {
+            "dbcode": "Colombie-Britannique",
+            "name": "Colombie-Britannique"
+          },
+          "American literature": {
+            "dbcode": "American literature",
+            "name": "American literature"
+          },
+          "Children": {
+            "dbcode": "Children",
+            "name": "Children"
+          },
+          "Biography": {
+            "dbcode": "Biography",
+            "name": "Biography"
+          },
+          "Doctrines": {
+            "dbcode": "Doctrines",
+            "name": "Doctrines"
+          },
+          "Constitutional history": {
+            "dbcode": "Constitutional history",
+            "name": "Constitutional history"
+          },
+          "History. [from old catalog]": {
+            "dbcode": "History. [from old catalog]",
+            "name": "History. [from old catalog]"
+          },
+          "Italy": {
+            "dbcode": "Italy",
+            "name": "Italy"
+          },
+          "Economics": {
+            "dbcode": "Economics",
+            "name": "Economics"
+          },
+          "West (U.S.)": {
+            "dbcode": "West (U.S.)",
+            "name": "West (U.S.)"
+          },
+          "Voyages and travels": {
+            "dbcode": "Voyages and travels",
+            "name": "Voyages and travels"
+          },
+          "Universities and colleges": {
+            "dbcode": "Universities and colleges",
+            "name": "Universities and colleges"
+          },
+          "Netherlands": {
+            "dbcode": "Netherlands",
+            "name": "Netherlands"
+          },
+          "Church of England": {
+            "dbcode": "Church of England",
+            "name": "Church of England"
+          },
+          "Teaching": {
+            "dbcode": "Teaching",
+            "name": "Teaching"
+          },
+          "Sermons, English": {
+            "dbcode": "Sermons, English",
+            "name": "Sermons, English"
+          },
+          "Banks and banking": {
+            "dbcode": "Banks and banking",
+            "name": "Banks and banking"
+          },
+          "D": {
+            "dbcode": "D",
+            "name": "D"
+          },
+          "Horses": {
+            "dbcode": "Horses",
+            "name": "Horses"
+          },
+          "Sermons, American": {
+            "dbcode": "Sermons, American",
+            "name": "Sermons, American"
+          },
+          "Diseases": {
+            "dbcode": "Diseases",
+            "name": "Diseases"
+          },
+          "Scotland": {
+            "dbcode": "Scotland",
+            "name": "Scotland"
+          },
+          "Texts": {
+            "dbcode": "Texts",
+            "name": "Texts"
+          },
+          "French language": {
+            "dbcode": "French language",
+            "name": "French language"
+          },
+          "Taxation": {
+            "dbcode": "Taxation",
+            "name": "Taxation"
+          },
+          "Criticism and interpretation": {
+            "dbcode": "Criticism and interpretation",
+            "name": "Criticism and interpretation"
+          },
+          "Antiquities": {
+            "dbcode": "Antiquities",
+            "name": "Antiquities"
+          },
+          "Politique et gouvernement": {
+            "dbcode": "Politique et gouvernement",
+            "name": "Politique et gouvernement"
+          },
+          "Germany": {
+            "dbcode": "Germany",
+            "name": "Germany"
+          },
+          "English poetry": {
+            "dbcode": "English poetry",
+            "name": "English poetry"
+          },
+          "Law": {
+            "dbcode": "Law",
+            "name": "Law"
+          },
+          "Correspondence": {
+            "dbcode": "Correspondence",
+            "name": "Correspondence"
+          },
+          "Ethnology": {
+            "dbcode": "Ethnology",
+            "name": "Ethnology"
+          },
+          "Qu": {
+            "dbcode": "Qu",
+            "name": "Qu"
+          },
+          "City planning": {
+            "dbcode": "City planning",
+            "name": "City planning"
+          },
+          "Regimental histories": {
+            "dbcode": "Regimental histories",
+            "name": "Regimental histories"
+          },
+          "Catholic Church": {
+            "dbcode": "Catholic Church",
+            "name": "Catholic Church"
+          },
+          "Soviet Union": {
+            "dbcode": "Soviet Union",
+            "name": "Soviet Union"
+          },
+          "Exhibitions": {
+            "dbcode": "Exhibitions",
+            "name": "Exhibitions"
+          },
+          "Mexico": {
+            "dbcode": "Mexico",
+            "name": "Mexico"
+          },
+          "Egypt": {
+            "dbcode": "Egypt",
+            "name": "Egypt"
+          },
+          "Jesus Christ": {
+            "dbcode": "Jesus Christ",
+            "name": "Jesus Christ"
+          },
+          "History and criticism": {
+            "dbcode": "History and criticism",
+            "name": "History and criticism"
+          },
+          "Am": {
+            "dbcode": "Am",
+            "name": "Am"
+          },
+          "Description": {
+            "dbcode": "Description",
+            "name": "Description"
+          },
+          "Sources": {
+            "dbcode": "Sources",
+            "name": "Sources"
+          },
+          "Socialism": {
+            "dbcode": "Socialism",
+            "name": "Socialism"
+          },
+          "Fishing": {
+            "dbcode": "Fishing",
+            "name": "Fishing"
+          },
+          "Greece": {
+            "dbcode": "Greece",
+            "name": "Greece"
+          },
+          "Accounting": {
+            "dbcode": "Accounting",
+            "name": "Accounting"
+          },
+          "Economic aspects": {
+            "dbcode": "Economic aspects",
+            "name": "Economic aspects"
+          },
+          "Geography": {
+            "dbcode": "Geography",
+            "name": "Geography"
+          }
+        }
+      }
+    },
+    {
+      "type": "categorical",
+      "dbfield": "aLanguage",
+      "name": "Language",
+      "categorical": {
+        "sort_order": [
+          "eng",
+          "Unknown",
+          "fre",
+          "ger",
+          "ita",
+          "spa",
+          "lat",
+          "por",
+          "rus",
+          "dut",
+          "nor",
+          "cze",
+          "pol",
+          "swe",
+          "hun"
+        ],
+        "descriptions": {
+          "ger": {
+            "dbcode": "ger",
+            "name": "German"
+          },
+          "fre": {
+            "dbcode": "fre",
+            "name": "French"
+          },
+          "eng": {
+            "dbcode": "eng",
+            "name": "English"
+          },
+          "Unknown": {
+            "dbcode": "Unknown",
+            "name": "Unknown"
+          },
+          "hun": {
+            "dbcode": "hun",
+            "name": "Hungarian"
+          },
+          "por": {
+            "dbcode": "por",
+            "name": "Portuguese"
+          },
+          "ita": {
+            "dbcode": "ita",
+            "name": "Italian"
+          },
+          "swe": {
+            "dbcode": "swe",
+            "name": "Swedish"
+          },
+          "pol": {
+            "dbcode": "pol",
+            "name": "Polish"
+          },
+          "rus": {
+            "dbcode": "rus",
+            "name": "Russian"
+          },
+          "lat": {
+            "dbcode": "lat",
+            "name": "Latin"
+          },
+          "spa": {
+            "dbcode": "spa",
+            "name": "Spanish"
+          },
+          "dut": {
+            "dbcode": "dut",
+            "name": "Dutch"
+          },
+          "nor": {
+            "dbcode": "nor",
+            "name": "Norwegian"
+          },
+          "cze": {
+            "dbcode": "cze",
+            "name": "Czech"
+          }
+        }
+      }
+    },
+    {
+      "type": "categorical",
+      "dbfield": "country",
+      "name": "Country(s)",
+      "categorical": {
+        "sort_order": [
+          "USA",
+          "UK",
+          "France",
+          "Germany",
+          "Canada",
+          "Italy",
+          "Spain",
+          "Portugal",
+          "Netherlands",
+          "Austria",
+          "Belgium",
+          "Switzerland",
+          "India",
+          "Denmark",
+          "Ireland",
+          "Argentina",
+          "Sweden",
+          "Russia",
+          "Poland",
+          "Hungary",
+          "Australia"
+        ],
+        "descriptions": {
+          "Canada": {
+            "dbcode": "Canada",
+            "name": "Canada"
+          },
+          "Ireland": {
+            "dbcode": "Ireland",
+            "name": "Ireland"
+          },
+          "Netherlands": {
+            "dbcode": "Netherlands",
+            "name": "Netherlands"
+          },
+          "Italy": {
+            "dbcode": "Italy",
+            "name": "Italy"
+          },
+          "Portugal": {
+            "dbcode": "Portugal",
+            "name": "Portugal"
+          },
+          "USA": {
+            "dbcode": "USA",
+            "name": "USA"
+          },
+          "Denmark": {
+            "dbcode": "Denmark",
+            "name": "Denmark"
+          },
+          "Poland": {
+            "dbcode": "Poland",
+            "name": "Poland"
+          },
+          "India": {
+            "dbcode": "India",
+            "name": "India"
+          },
+          "Sweden": {
+            "dbcode": "Sweden",
+            "name": "Sweden"
+          },
+          "France": {
+            "dbcode": "France",
+            "name": "France"
+          },
+          "Switzerland": {
+            "dbcode": "Switzerland",
+            "name": "Switzerland"
+          },
+          "Austria": {
+            "dbcode": "Austria",
+            "name": "Austria"
+          },
+          "Australia": {
+            "dbcode": "Australia",
+            "name": "Australia"
+          },
+          "Germany": {
+            "dbcode": "Germany",
+            "name": "Germany"
+          },
+          "UK": {
+            "dbcode": "UK",
+            "name": "UK"
+          },
+          "Belgium": {
+            "dbcode": "Belgium",
+            "name": "Belgium"
+          },
+          "Hungary": {
+            "dbcode": "Hungary",
+            "name": "Hungary"
+          },
+          "Argentina": {
+            "dbcode": "Argentina",
+            "name": "Argentina"
+          },
+          "Russia": {
+            "dbcode": "Russia",
+            "name": "Russia"
+          },
+          "Spain": {
+            "dbcode": "Spain",
+            "name": "Spain"
+          }
+        }
+      }
+    },
+    {
+      "type": "categorical",
+      "dbfield": "state",
+      "name": "State(s)",
+      "categorical": {
+        "sort_order": [
+          "NY",
+          "MA",
+          "PA",
+          "IL",
+          "DC",
+          "CA",
+          "OH",
+          "CT",
+          "MT",
+          "MD",
+          "VA",
+          "MO",
+          "IN",
+          "NJ",
+          "NC",
+          "MI",
+          "WI",
+          "XX",
+          "MN",
+          "ME",
+          "IA",
+          "TN",
+          "RI",
+          "NH",
+          "GA",
+          "TX",
+          "KS",
+          "SC",
+          "KY",
+          "FL"
+        ],
+        "descriptions": {
+          "DC": {
+            "dbcode": "DC",
+            "name": "DC"
+          },
+          "WI": {
+            "dbcode": "WI",
+            "name": "WI"
+          },
+          "FL": {
+            "dbcode": "FL",
+            "name": "FL"
+          },
+          "NH": {
+            "dbcode": "NH",
+            "name": "NH"
+          },
+          "NJ": {
+            "dbcode": "NJ",
+            "name": "NJ"
+          },
+          "TX": {
+            "dbcode": "TX",
+            "name": "TX"
+          },
+          "NC": {
+            "dbcode": "NC",
+            "name": "NC"
+          },
+          "TN": {
+            "dbcode": "TN",
+            "name": "TN"
+          },
+          "NY": {
+            "dbcode": "NY",
+            "name": "NY"
+          },
+          "PA": {
+            "dbcode": "PA",
+            "name": "PA"
+          },
+          "RI": {
+            "dbcode": "RI",
+            "name": "RI"
+          },
+          "VA": {
+            "dbcode": "VA",
+            "name": "VA"
+          },
+          "CA": {
+            "dbcode": "CA",
+            "name": "CA"
+          },
+          "XX": {
+            "dbcode": "XX",
+            "name": "XX"
+          },
+          "IL": {
+            "dbcode": "IL",
+            "name": "IL"
+          },
+          "GA": {
+            "dbcode": "GA",
+            "name": "GA"
+          },
+          "IN": {
+            "dbcode": "IN",
+            "name": "IN"
+          },
+          "IA": {
+            "dbcode": "IA",
+            "name": "IA"
+          },
+          "CT": {
+            "dbcode": "CT",
+            "name": "CT"
+          },
+          "ME": {
+            "dbcode": "ME",
+            "name": "ME"
+          },
+          "MD": {
+            "dbcode": "MD",
+            "name": "MD"
+          },
+          "MA": {
+            "dbcode": "MA",
+            "name": "MA"
+          },
+          "OH": {
+            "dbcode": "OH",
+            "name": "OH"
+          },
+          "MO": {
+            "dbcode": "MO",
+            "name": "MO"
+          },
+          "MN": {
+            "dbcode": "MN",
+            "name": "MN"
+          },
+          "MI": {
+            "dbcode": "MI",
+            "name": "MI"
+          },
+          "KS": {
+            "dbcode": "KS",
+            "name": "KS"
+          },
+          "MT": {
+            "dbcode": "MT",
+            "name": "MT"
+          },
+          "SC": {
+            "dbcode": "SC",
+            "name": "SC"
+          },
+          "KY": {
+            "dbcode": "KY",
+            "name": "KY"
+          }
+        }
+      }
+    },
+    {
+      "type": "categorical",
+      "dbfield": "gender",
+      "name": "Gender",
+      "categorical": {
+        "sort_order": [
+          "Probably Female",
+          "Probably Male"
+        ],
+        "descriptions": {
+          "Probably Female": {
+            "dbcode": 1,
+            "name": "Probably Female",
+            "shortname": "Female"
+          },
+          "Probably Male": {
+            "dbcode": 2,
+            "name": "Probably Male",
+            "shortname": "Male"
+          }
+        }
+      }
+    }
+  ]
+}
