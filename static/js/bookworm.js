@@ -457,7 +457,7 @@
         return _this.dialog("In Progress", "Settings", 600);
       });
       $(".link.info").click(function() {
-        return _this.dialog("Bookworm is a collaboration between the Harvard Cultural Observatory, Open Library, and the Open Science Data Cloud. It enables you to graphically explore lexical trends across a huge digital library.", "Information");
+        return _this.dialog("Bookworm enables you to graphically explore lexical trends across a huge digital library.", "Information");
       });
       $(document).on("click", "#meta .queries .query .filter", function(event) {
         var fc, i, meta, target;

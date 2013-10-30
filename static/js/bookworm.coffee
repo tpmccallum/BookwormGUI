@@ -73,8 +73,13 @@ class State
         @smoothing = smoothing
         @caseSensitive = caseSensitive
         @xAxis = x
-        @yAxis = new yOption "per million words", "Occurrences_per_Million_Words"
-        @xRange = x.range
+        @yAxis = new yOption "percent of texts", "Percentage_of_Books"
+        if @database == "ssrn"
+            @xRange = [731084, 735264]
+        else if @database == "arxiv"
+            @xRange = [729053, 735305]
+        else
+            @xRange = x.range
         @data = []
 
     changeState: (newState) ->
@@ -102,6 +107,23 @@ class State
 
 class APIManager
     constructor: () ->
+
+    # The next 3 "get_sort_XXX" functions sort the date/count key value pairs by the date (ascending)
+    # Firefox won't auto sort the dates, so these functions are needed.
+    get_sorted_year = (seriesvalues) ->
+      mmm = ([Date.UTC(k, 0, 1), v] for k, v of seriesvalues)
+      ummm = mmm.sort (a, b) -> a[0] - b[0]
+      ummm
+
+    get_sorted_month = (seriesvalues) ->
+      mmm = ([Date.UTC(-1, 12, k), v] for k, v of seriesvalues)
+      ummm = mmm.sort (a, b) -> a[0] - b[0]
+      ummm
+
+    get_sorted_other = (seriesvalues) ->
+      mmm = ([parseInt(k), v] for k, v of seriesvalues)
+      ummm = mmm.sort (a, b) -> a[0] - b[0]
+      ummm
 
     parseState: (state) ->
         "Parses an internal state into the API format and returns it"
@@ -131,25 +153,25 @@ class APIManager
         "Processes the counts into highcharts-readable format"
         counts = eval counts.split('===RESULT===')[1]
         data = []
-        if state.xAxis.unit == "year"
+        if state.xAxis.unit == "year" or state.xAxis.unit == "date_year"
             for series, i in counts
                 data.push
                     name: series.Name
-                    data: [Date.UTC(k, 0, 1), v] for k,v of series.values
+                    data: get_sorted_year(series.values)
                     color: state.queries[i].color
                     id: state.queries[i].id
-        else if state.xAxis.unit == "month"
+        else if state.xAxis.unit == "month" or state.xAxis.unit == "date_month"
             for series, i in counts
                 data.push
                     name: series.Name
-                    data: [Date.UTC(-1, 12, k), v] for k,v of series.values
+                    data: get_sorted_month(series.values)
                     color: state.queries[i].color
                     id: state.queries[i].id
         else
             for series, i in counts
                 data.push
                     name: series.Name
-                    data: [parseInt(k), v] for k,v of series.values
+                    data: get_sorted_other(series.values)
                     color: state.queries[i].color
                     id: state.queries[i].id
         data
@@ -176,7 +198,7 @@ class APIManager
     processOptions: (options, colorManager) ->
         o = 
             settings: options["settings"]
-            xOptions: (new xOption(x.name, x.dbfield, x.unit, x.range) for x in options["ui_components"] when x.type is "time")
+            xOptions: (new xOption(x.name, x.dbfield, x.unit, x.range, x.initial) for x in options["ui_components"] when x.type is "time")
             metadata: []
             queries: []
 
@@ -187,8 +209,8 @@ class APIManager
             o.metadata.push new MetaField(meta.name, meta.dbfield, values)
 
 
-        initial = options["default_search"][Math.floor(Math.random()*options["default_search"].length)]
-        for search in initial["search_limits"]
+        initialsearches = options["default_search"][Math.floor(Math.random()*options["default_search"].length)]
+        for search in initialsearches["search_limits"]
             filters = []
             for field, value of search
                 if field != "word"
@@ -223,8 +245,12 @@ class UIManager
                 console.log $("#meta")
 
         # Click binding for the Info link
+        $(".link.getlink").click () =>
+            @dialog("In Progress", "Settings", 600)
+
+        # Click binding for the Info link
         $(".link.info").click () =>
-            @dialog("Bookworm is a collaboration between the Harvard Cultural Observatory, Open Library, and the Open Science Data Cloud. It enables you to graphically explore lexical trends across a huge digital library.", "Information")
+            @dialog("Bookworm enables you to graphically explore lexical trends across a huge digital library.", "Information")
 
         # TODO: clean up this section
         $(document).on "click", "#meta .queries .query .filter", (event) =>
@@ -277,8 +303,14 @@ class UIManager
 
     smoothingUnits: (val) -> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 18, 24, 36][val]
 
-    setName: (name) ->
-        $(".header .title .current").text(name)
+    setHeader: (sourcename, sourceurl, itemname) ->
+        $("#header .title .current").text(sourcename)
+        $("#header .subtitle .itemName").text(itemname)
+        $("#header .subtitle .source").attr('href', "http://"+sourceurl)
+        $("<span />").addClass("current").text(sourceurl).appendTo($("#header .subtitle .source"))
+
+    setXDateLabel: (timename) ->
+        $("#chart .x-axis .label").text(timename)
 
     addXOption: (xOption) ->
         $("<div />").addClass("option").text(xOption.name).appendTo($(".x-axis .dropdown"))
@@ -322,11 +354,12 @@ class UIManager
             $("<span />").text("All texts").addClass("filter").appendTo(filters)
         else
             for filter in query.filters
-                $("<span />").text(filter.value.name).addClass("filter").data("field-id", filter.field.id)
+                $("<span />").text(filter.field.name+": "+filter.value.name).addClass("filter").data("field-id", filter.field.id)
+                #$("<span />").text(filter.value.name).addClass("filter").data("field-id", filter.field.id)
                     .data("value-id", filter.value.id).data("query-id", query.id).appendTo(filters)
 
         filters.appendTo(html)
-        $("<span />").text("47B words").addClass("corpus").appendTo(html)
+        $("<span />").text("X words").addClass("corpus").appendTo(html)
 
         # Click event for duplicating the query
         $("<span />").html("+").addClass("add").appendTo(html).click (e) =>
@@ -460,11 +493,11 @@ class Chart
                     fontFamily: "Open Sans"
                 formatter: () ->
                     # str = '<b>'+Highcharts.dateFormat('%B %Y', this.points[0].x)+'</b><br/>'
-                    if bookworm.state.xAxis.unit == "year"
+                    if bookworm.state.xAxis.unit == "year" or bookworm.state.xAxis.unit == "date_year"
                         str = '<b>'+Highcharts.dateFormat('%Y', this.points[0].x)+'</b><br/>'
-                    else if bookworm.state.xAxis.unit == "month"
+                    else if bookworm.state.xAxis.unit == "month" or bookworm.state.xAxis.unit == "date_month"
                         str = '<b>'+Highcharts.dateFormat('%B %Y', this.points[0].x)+'</b><br/>'
-                    else if bookworm.state.xAxis.unit == "day"
+                    else if bookworm.state.xAxis.unit == "day" or bookworm.state.xAxis.unit == "date_day"
                         str = '<b>'+Highcharts.dateFormat('%B %e, %Y', this.points[0].x)+'</b><br/>'
                     else
                         str = '<b>'+Highcharts.numberFormat(this.points[0].x, 0)+'</b><br/>'
@@ -561,10 +594,12 @@ class Bookworm
 
             @uiManager = new UIManager @, @state, options.xOptions
 
-            @uiManager.setName options.settings.sourceName
+            @uiManager.setHeader options.settings.sourceName, options.settings.sourceURL, options.settings.itemName
+
+            @uiManager.setXDateLabel options.xOptions[0].name
 
             $.when(@apiManager.getCounts @state).done (counts) =>
-                $("#header, #meta, #chart").fadeIn 600
+                $("#header, #meta, #chart").fadeIn 250
                 @chart = new Chart (@apiManager.processCounts @state, counts), @
                 $("#reset-zoom").click () =>
                     @chart.resetZoom()
